@@ -19,4 +19,5 @@ In conclusion, this project showcases a thoughtful integration of cutting-edge t
 
 # OUTPUT OF THE TASK
 ![Screenshot 2025-01-09 215535](https://github.com/user-attachments/assets/b2172d26-f728-4984-ba3b-e4969ff7ef0a)
-![Screenshot 2025-01-09 215833](https://github.com/user-attachments/assets/0ea182d1-d3df-4618-8c74-01d8b9450fdf)
+![Image](https://github.com/user-attachments/assets/5263b453-fdf8-4224-b134-86776b2b6d4d)
+![Image](https://github.com/user-attachments/assets/ebecb4d2-4f3e-4347-bbdb-2c05a7927f3e)
