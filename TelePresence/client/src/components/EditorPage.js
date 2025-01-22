@@ -12,34 +12,10 @@ import {
 import { toast } from "react-hot-toast";
 import axios from "axios";
 
-// List of supported languages
-const LANGUAGES = [
-  "python3",
-  "java",
-  "cpp",
-  "nodejs",
-  "c",
-  "ruby",
-  "go",
-  "scala",
-  "bash",
-  "sql",
-  "pascal",
-  "csharp",
-  "php",
-  "swift",
-  "rust",
-  "r",
-];
-
 function EditorPage() {
   const [clients, setClients] = useState([]);
   const [output, setOutput] = useState("");
-  const [isCompileWindowOpen, setIsCompileWindowOpen] = useState(false);
-  const [isCompiling, setIsCompiling] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("python3");
   const codeRef = useRef(null);
-
   const Location = useLocation();
   const navigate = useNavigate();
   const { roomId } = useParams();
@@ -111,27 +87,6 @@ function EditorPage() {
     navigate("/");
   };
 
-  const runCode = async () => {
-    setIsCompiling(true);
-    try {
-      const response = await axios.post("http://localhost:5000/compile", {
-        code: codeRef.current,
-        language: selectedLanguage,
-      });
-      console.log("Backend response:", response.data);
-      setOutput(response.data.output || JSON.stringify(response.data));
-    } catch (error) {
-      console.error("Error compiling code:", error);
-      setOutput(error.response?.data?.error || "An error occurred");
-    } finally {
-      setIsCompiling(false);
-    }
-  };
-
-  const toggleCompileWindow = () => {
-    setIsCompileWindowOpen(!isCompileWindowOpen);
-  };
-
   return (
     <div className="container-fluid vh-100 d-flex flex-column">
       <div className="row flex-grow-1">
@@ -164,24 +119,8 @@ function EditorPage() {
             </button>
           </div>
         </div>
-
         {/* Editor panel */}
         <div className="col-md-10 text-light d-flex flex-column">
-          {/* Language selector */}
-          <div className="bg-dark p-2 d-flex justify-content-end">
-            <select
-              className="form-select w-auto"
-              value={selectedLanguage}
-              onChange={(e) => setSelectedLanguage(e.target.value)}
-            >
-              {LANGUAGES.map((lang) => (
-                <option key={lang} value={lang}>
-                  {lang}
-                </option>
-              ))}
-            </select>
-          </div>
-
           <Editor
             socketRef={socketRef}
             roomId={roomId}
@@ -191,53 +130,7 @@ function EditorPage() {
           />
         </div>
       </div>
-
-      {/* Compiler toggle button */}
-      <button
-        className="btn btn-primary position-fixed bottom-0 end-0 m-3"
-        onClick={toggleCompileWindow}
-        style={{ zIndex: 1050 }}
-      >
-        {isCompileWindowOpen ? "Close Compiler" : "Open Compiler"}
-      </button>
-
-      {/* Compiler section */}
-      <div
-        className={`bg-dark text-light p-3 ${
-          isCompileWindowOpen ? "d-block" : "d-none"
-        }`}
-        style={{
-          position: "fixed",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: isCompileWindowOpen ? "30vh" : "0",
-          transition: "height 0.3s ease-in-out",
-          overflowY: "auto",
-          zIndex: 1040,
-        }}
-      >
-        <div className="d-flex justify-content-between align-items-center mb-3">
-          <h5 className="m-0">Compiler Output ({selectedLanguage})</h5>
-          <div>
-            <button
-              className="btn btn-success me-2"
-              onClick={runCode}
-              disabled={isCompiling}
-            >
-              {isCompiling ? "Compiling..." : "Run Code"}
-            </button>
-            <button className="btn btn-secondary" onClick={toggleCompileWindow}>
-              Close
-            </button>
-          </div>
-        </div>
-        <pre className="bg-secondary p-3 rounded">
-          {output || "Output will appear here after compilation"}
-        </pre>
-      </div>
-    </div>
+    </div>         
   );
 }
-
 export default EditorPage;
