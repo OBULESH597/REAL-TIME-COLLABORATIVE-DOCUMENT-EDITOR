@@ -1,24 +1,78 @@
-# REAL-TIME-COLLABORATIVE-DOCUMENT-EDITOR
+# 📝 REAL-TIME COLLABORATIVE DOCUMENT EDITOR
 
-**COMPANY**: CODTECH IT SOLUTIONS
+> Developed as part of the **CodTech Internship Program** – Task 3
 
-**NAME**: Prajyot Prakash Deshpande
+This is a real-time collaborative document editor that allows multiple users to edit the same document simultaneously. It is built using **React.js**, **Node.js**, **Socket.IO**, and **MongoDB**.
+---
+## 👨‍💻 Internship Details
+- **Intern Name**: Obulesu Polisetti
+- **Intern ID**: CT08DG2167  
+- **Internship Program**: Full Stack Web Development Internship  
+- **Organization**: [CODTECH Technologies](https://codtech.in)  
+- **Task Number**: Task-3 – REAL-TIME COLLABORATIVE DOCUMENT EDITOR  
+- **Project Title**: Weather Webpage using OpenWeatherMap API  
+- **Duration**: 17 June 2025 – 17 August 2025 
+---
 
-**INTERN ID**: CT08JIT
+## 🚀 Live Demo
 
-**DOMAIN**: FULL STACK WEB DEVELOPMENT
+🌐 **Deployed Link:** [Click here to view the app](https://your-deployment-link.com)
 
-**BATCH DURATION**: JANUARY 5th,2025 to FEBRUARY 5th, 2025
+---
 
-**MENTOR NAME** : NEELA SANTHOSH KUMAR
+## 📸 Preview
 
-# DESCRIPTION OF TASK PERFORMED :
-As a task of CODTECH internship, I built a Real-time collaborative code editor.I have created a real-time collaborative document editor using React.js for a dynamic and responsive user interface, MongoDB for efficient data storage, and Node.js as the backend framework. Download button is also provided , if the user needs to download the file in .txt format.The system allows multiple users to join the same editing session, working collaboratively on a shared document. Using WebSocket communication, I have implemented real-time updates so any changes made by one user are immediately reflected for all other participants in the same room. Routes are handled in the backend using Node.js and Express.js, with API endpoints for creating, retrieving, and managing collaborative sessions. A central MongoDB database stores document data and user activity logs, ensuring that edits are preserved even if users leave and rejoin the session. I have designed the front end in React.js, efficiently handling the application, such as tracking users in a room or managing document content updates in real time. The backend is designed using Node.js, with an event-driven architecture to handle simultaneous requests and WebSocket connections. To ensure simultaneous changes are synchronized across users. The editor will also feature room-based collaboration, where users can create or join rooms identified by unique IDs, and only users within the same room can view and edit the document. Additionally, the interface will include essential text downloading button which will act as option for document saving. Error handling is implemented for monitoring the application. The ultimate goal is to create a robust, scalable, and user-friendly collaborative editing platform that combines real-time functionality, smooth UI interactions, and secure backend services.
-This real-time collaborative document editor stands out due to its powerful combination of technologies and feature-rich design. The seamless synchronization of edits across multiple users ensures an unparalleled collaborative experience. Real-time updates powered by WebSockets allow every user in the same room to see changes instantly, fostering effective teamwork. The use of React.js provides a highly dynamic and interactive user interface, making the editing process smooth and intuitive. With MongoDB as the database, the application benefits from scalable and flexible data management, ensuring that documents and user activities are reliably stored and accessible. The backend, built with Node.js, guarantees a robust and efficient framework capable of handling concurrent requests and maintaining consistent communication between users. The implementation of room-based collaboration ensures that editing sessions remain private and focused, effectively handle simultaneous edits, preventing conflicts and data loss.
-I designed TelePresence, a real-time document editor that facilitates seamless collaboration. Built with React.js for a dynamic front end, Node.js for the backend, and MongoDB for scalable data storage, the platform allows multiple users to simultaneously work on a shared document. WebSocket integration ensures instant synchronization of edits across users, while the room-based system allows participants to join and collaborate in a focused, private environment. Additionally, the feature to download documents as .txt files and efficient error handling further enhance the user experience, making it a powerful tool for online teamwork.
-In conclusion, this project showcases a thoughtful integration of cutting-edge technologies to deliver a modern and efficient collaborative editing solution. React.js powers the responsive front end, MongoDB ensures reliable and scalable data storage, and Node.js with WebSocket communication enables real-time interactions and seamless backend operations. Together, these technologies form the backbone of a feature-rich and user-focused collaborative editing platform. I have named my project as **TelePresence**.
+![App Preview](./preview.png)
 
-# OUTPUT OF THE TASK
-![Screenshot 2025-01-09 215535](https://github.com/user-attachments/assets/b2172d26-f728-4984-ba3b-e4969ff7ef0a)
-![Image](https://github.com/user-attachments/assets/2019ee24-3e40-4ed3-b588-967b4f5eccff)
-![Image](https://github.com/user-attachments/assets/e3b076e5-f070-4224-99e6-f26fd634d2b1)
+---
+
+## 🛠️ Features
+
+- Real-time text editing with WebSocket/Socket.IO
+- Multiple users editing the same document
+- Auto-synchronization of changes
+- Clean and responsive UI
+- Persistent document storage with MongoDB
+
+---
+
+## 🧰 Tech Stack
+
+**Frontend:**
+- React.js
+- Tailwind CSS or Bootstrap (optional)
+
+**Backend:**
+- Node.js
+- Express.js
+- Socket.IO
+
+**Database:**
+- MongoDB
+
+---
+
+## 🔧 Installation & Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/REAL-TIME-COLLABORATIVE-DOCUMENT-EDITOR.git
+cd REAL-TIME-COLLABORATIVE-DOCUMENT-EDITOR
+
+# Install backend dependencies
+cd server
+npm install
+
+# Install frontend dependencies
+cd ../client
+npm install
+
+# Run backend
+cd ../server
+node server.js
+
+# Run frontend
+cd ../client
+npm start
+
+
